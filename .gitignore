@@ -3,6 +3,7 @@
 *.id_rsa.pub
 .ssh/authorized_keys
 .ssh/known_hosts
+.vscode
 
 
 ## Ignore Visual Studio temporary files, build results, and

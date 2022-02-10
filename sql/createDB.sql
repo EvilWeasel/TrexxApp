@@ -1,11 +1,19 @@
-CREATE DATABASE IF NOT EXISTS 'TrexxApp';
-DROP TABLE IF EXISTS 'Lernmaterial';
-CREATE TABLE 'Lernmaterial'(
-    'ID' INTEGER PRIMARY KEY AUTOINCREMENT,
-    'Name' VARCHAR(200) NOT NULL,
-    'Beschreibung' VARCHAR(200) NOT NULL,
-    'Kategorie' VARCHAR(200) NOT NULL,
-    'Datum' VARCHAR(200) NOT NULL,
-    'Bild' VARCHAR(200) NOT NULL,
-    'Link' VARCHAR(200) NOT NULL
-);
+--CREATE DATABASE IF NOT EXISTS 'TrexxApp';
+--DROP TABLE IF EXISTS 'Lernmaterial';
+--CREATE TABLE 'Lernmaterial'(
+--'ID' INTEGER PRIMARY KEY AUTOINCREMENT,
+--'Name' VARCHAR(200) NOT NULL,
+--'Beschreibung' VARCHAR(200) NOT NULL,
+--'Kategorie' VARCHAR(200) NOT NULL,
+--'Datum' VARCHAR(200) NOT NULL,
+--'Bild' VARCHAR(200) NOT NULL,
+--'Link' VARCHAR(200) NOT NULL
+--);
+--INSERT INTO 'Lernmaterial' ('Name','Beschreibung','Kategorie','Datum','Bild','Link')
+--VALUES (
+--"Agathe Bauer",
+--"Demo-Beschreibung",
+--"Demo-Kategorie",
+--"1.1.2022",
+--);
+CREATE DATABSE IF NOT EXISTS 'TrexxApp';
