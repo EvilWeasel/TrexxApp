@@ -4,6 +4,7 @@
 .ssh/authorized_keys
 .ssh/known_hosts
 .vscode
+env/
 
 
 ## Ignore Visual Studio temporary files, build results, and
