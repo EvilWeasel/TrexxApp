@@ -14,3 +14,7 @@ def userCreate(request):
 
 def user(request):
     return render(request, "user.html")
+
+
+def login(request):
+    return render(request, "login.html", {})
