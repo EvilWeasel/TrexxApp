@@ -9,11 +9,7 @@ def index(request):
 
 
 def userCreate(request):
-<<<<<<< Updated upstream
     return render(request, "register.html")
-=======
-    return render(request, "userCreate.html")
->>>>>>> Stashed changes
 
 
 def user(request):
