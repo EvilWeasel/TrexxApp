@@ -14,6 +14,8 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <!-- Styles for controls (delete, move, edit, block name) -->
     <link href="app-dist/css/preview.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/styles.css'%}">
 </head> 
 <body data-aos-easing="ease-out-cubic" data-aos-duration="500" data-aos-delay="0"><!-- Navigation 5 -->
 <nav class="bg-bg-3 sticky-top py-4 py-lg-7">
@@ -30,7 +32,8 @@
                 </div>
                 <div class="col-6 text-center aos-init aos-animate" data-aos="fade-down" data-aos-delay="250">
                     <a href="#">
-                        <img src="../Pictures/Titel.png" alt="" class="img-fluid aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">
+                        {% load static %}
+                        <img src="{% static 'images/Titel.png' %}" alt="" class="img-fluid aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">
                     </a>
                 </div>
                 <div class="col-3 aos-init aos-animate" data-aos="fade-down" data-aos-delay="500">
@@ -41,7 +44,8 @@
     <div class="offcanvas offcanvas-start bg-bg-3" id="custom-id-xdlgvh0k" aria-hidden="true">
         <div class="offcanvas-header">
             <a href="#">
-                <img src="./Pictures/Titel.png" srcset="./Pictures/Titel@2x.png 2x" alt="" class="img-fluid">				
+                {% load static %}
+                <img src="{% static 'images/Titel.png' %}" alt="" class="img-fluid">				
             </a>
             <a href="#" class="btn btn-sm btn-width-equal-height btn-bg-3 " data-bs-dismiss="offcanvas">
                 <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-dark-2">
@@ -81,7 +85,8 @@ Get Started
             <div class="row justify-content-between align-items-center">
                 <div class="col-3">
                     <a href="#">
-                        <img src="./Pictures/Titel.png" srcset="./Pictures/Titel.png 2x" alt="" class="img-fluid aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">						
+                {% load static %}
+                <img src="{% static 'images/Titel.png' %}" alt="" class="img-fluid">				
                     </a>
                 </div>
                 <div class="text-end col-9">
