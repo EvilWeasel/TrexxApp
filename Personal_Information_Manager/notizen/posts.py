@@ -7,10 +7,11 @@ from . import models
 
 def userCreate(request):
     newUser = models.User()
-    newUser.username = request.POST['email']
+    newUser.username = request.POST["firstname"]
+    newUser.email = request.POST['email']
     newUser.password = request.POST['password']
     # speichert user in db
     newUser.save()
     # save cookie with user id
 
-    return render(request, "user.html", newUser)
+    return render(request, "user.html", {"newUser" : newUser})
