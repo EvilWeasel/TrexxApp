@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'pim.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE'  : 'django.db.backends.mysql',
+        'NAME'    : 'TREXX-APP',                 
+        'USER'    : 'stunning-waffle-dev',                     
+        'PASSWORD': 'Directive-Slacker-Ravioli2',              
+        'HOST'    : 'strange-sky.de',                
+        'PORT'    : '9667',
     }
 }
 
