@@ -90,7 +90,7 @@
                     <h1 class="mb-6 text-light-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">
                 Einloggen
                     </h1>
-                    <form action="form-handler.php" method="post" enctype="multipart/form-data" class="js-ajax-form">
+                    <form action="post" method="post" enctype="multipart/form-data" class="js-ajax-form">{% csrf_token %}
                         <!-- forms alerts -->
                             <div class="alert alert-action-8 fixed-top invisible fade js-form-result" data-result="success" role="alert">
                                 <span class="js-form-alert-text" data-default-text="Thanks for your message!">

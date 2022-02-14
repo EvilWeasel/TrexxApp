@@ -26,3 +26,4 @@ class Lernobjekt(models.Model):
     beschreibung = models.CharField(max_length=200)
     kategorie = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
