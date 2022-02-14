@@ -34,6 +34,7 @@ def userLogin(request):
     loginUser.loghash = loginHash
     loginUser.save()
     loginUser.refresh_from_db()
-    HttpResponse.set_cookie('loghash', loginUser.hash,
-                            max_age=60 * 60 * 24 * 1)
-    redirect('/account/', loginUser)
+    Result = redirect('/account/', loginUser)
+    Result.set_cookie('loghash', loginUser.loghash,
+                      max_age=60 * 60 * 24 * 1)
+    return Result
