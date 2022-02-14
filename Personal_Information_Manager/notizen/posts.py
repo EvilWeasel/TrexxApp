@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.core.exceptions import *
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.db import models
 from . import models
+import hashlib
+import uuid
 
 
 def userCreate(request):
@@ -14,16 +16,24 @@ def userCreate(request):
     newUser.save()
     # save cookie with user id
 
-    return render(request, 'user.html', {'newUser' : newUser})
+    return render(request, 'user.html', {'newUser': newUser})
+
 
 def userLogin(request):
     loginEmail = request.POST['email']
     loginPassword = request.POST['password']
-
+    salt = uuid.uuid4().hex
+    loginHash = hashlib.sha256(
+        salt.encode() + loginPassword.encode()).hexdigest()
     try:
-        loginUser = models.User.objects.filter(email=loginEmail, password=loginPassword).get()
+        loginUser = models.User.objects.filter(
+            email=loginEmail, password=loginPassword).get()
     except ObjectDoesNotExist:
-        print('Object does not exist')
-
-    return render(request, 'user.html', {'loginUser' : loginUser})
-
+        print('User with this password does not exist')
+        render(request, 'login.html')
+    loginUser.loghash = loginHash
+    loginUser.save()
+    loginUser.refresh_from_db()
+    HttpResponse.set_cookie('loghash', loginUser.hash,
+                            max_age=60 * 60 * 24 * 1)
+    redirect('/account/', loginUser)

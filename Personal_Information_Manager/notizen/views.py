@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import User
 
 # Create your views here.
@@ -22,9 +22,9 @@ def userLogin(request):
 
 
 def account(request):
-    cookie = request.COOKIES.get('hash', 'none')
+    cookie = request.COOKIES.get('loghash', 'none')
     if(cookie != 'none'):
-        if(User.objects.filter(hash=cookie).exists()):
-            user = User.objects.get(hash=cookie)
-            return render(request, "account.html", user)
-    return render(request, "login.html")
+        if(User.objects.filter(loghash=cookie).exists()):
+            user = User.objects.get(loghash=cookie)
+            return render(request, "account.html", {'user': user})
+    return redirect(request, "login.html")
