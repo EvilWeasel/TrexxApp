@@ -4,6 +4,17 @@
 
 {% block content %}
 
+<div class="container user-card">
+    <div class="card-header">
+        <h1>{{ user.username }}</h1>
+    </div>
+    <div class="card-item">
+       <p>{{user.email}}</p> 
+    </div>
+    <div class="card-item">
+        <p>{{user.password}}</p>
+    </div>
+</div>
 
 
 {% endblock %}
