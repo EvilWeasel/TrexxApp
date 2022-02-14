@@ -14,6 +14,14 @@
     <div class="card-item">
         <p>{{user.password}}</p>
     </div>
+    <div class="file-upload">
+        <div class="file-select">
+          <input type="file" name="chooseFile" id="chooseFile">
+        </div>
+    </div>
+    <div>
+        <a href="{% url 'notizen:userUpload'%}" class="btn btn-action-1 btn-sm rounded-2 mt-4">Upload-Seite</a>
+    </div>
 </div>
 
 
