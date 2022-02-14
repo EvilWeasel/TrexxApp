@@ -18,3 +18,6 @@ def user(request):
 
 def userLogin(request):
     return render(request, "login.html")
+
+def account(request):
+    return render(request, "account.html")
