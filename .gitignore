@@ -5,6 +5,8 @@
 .ssh/known_hosts
 .vscode
 env/
+.env
+Personal_Information_Manager/db.sqlite3
 
 
 ## Ignore Visual Studio temporary files, build results, and
