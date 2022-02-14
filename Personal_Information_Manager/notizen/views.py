@@ -28,3 +28,6 @@ def account(request):
             user = User.objects.get(loghash=cookie)
             return render(request, "account.html", {'user': user})
     return redirect(request, "login.html")
+
+def userUpload(request):
+    return render(request, "account_file.html")
