@@ -29,7 +29,7 @@
                         </a>
                     </div>
                     <div class="col-6 text-center aos-init aos-animate" data-aos="fade-down" data-aos-delay="250">
-                        <a href="#">
+                        <a href="{% url 'notizen:index'%}">
                             {% load static %}
                             <img src="{% static 'images/Titel.png' %}" alt="" class="img-fluid aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">
                         </a>
@@ -42,7 +42,7 @@
         <!--kleine Ansicht-->
         <div class="offcanvas offcanvas-start bg-bg-3" id="custom-id-xdlgvh0k" aria-hidden="true">
             <div class="offcanvas-header">
-                <a href="#">
+                <a href="{% url 'notizen:index'%}">
                     {% load static %}
                     <img src="{% static 'images/Titel.png' %}" alt="" class="img-fluid">				
                 </a>
@@ -55,12 +55,12 @@
             </div>
             <div class="offcanvas-body">
                 <div>
-                    <a href="#" class="fw-bold text-dark-1 py-2 d-inline-block">Start</a>
+                    <a href="{% url 'notizen:index'%}" class="fw-bold text-dark-1 py-2 d-inline-block">Start</a>
                 </div>
                 <div>
                     <a href="#" class="fw-bold text-dark-1 py-2 d-inline-block">Übersicht</a>
                 </div>
-                <a href="#" class="btn btn-action-1 btn-sm rounded-2 mt-4">Anmelden</a>
+                <a href="{% url 'notizen:userLogin'%}" class="btn btn-action-1 btn-sm rounded-2 mt-4">Anmelden</a>
             </div>
         </div>
         <!--Große ansicht-->
@@ -68,15 +68,15 @@
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-3">
-                        <a href="#">
+                        <a href="{% url 'notizen:index'%}">
                     {% load static %}
                     <img src="{% static 'images/Titel.png' %}" alt="" class="img-fluid">				
                         </a>
                     </div>
                     <div class="text-end col-9">
-                        <a href="#" class="fw-bold mx-4 text-dark-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="150">Start</a>
+                        <a href="{% url 'notizen:index'%}" class="fw-bold mx-4 text-dark-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="150">Start</a>
                         <a href="#" class="fw-bold mx-4 text-dark-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="250">Übersicht</a>
-                        <a href="#" class="ms-4 btn btn-action-1 btn-sm rounded-2 aos-init aos-animate" data-aos="fade-down" data-aos-delay="650">Anmelden</a>
+                        <a href="{% url 'notizen:userLogin'%}" class="ms-4 btn btn-action-1 btn-sm rounded-2 aos-init aos-animate" data-aos="fade-down" data-aos-delay="650">Anmelden</a>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                                     <p class="d-inline-block mb-0 text-light-3 aos-init aos-animate" data-aos="fade-down" data-aos-delay="900">
                                         Du hast keinen Account? Melde Dich hier an -&gt;
                                     </p>
-                                    <a href="/user/create" class="ms-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="900">
+                                    <a href="./user/create" class="ms-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="900">
                                         Registrieren
                                     </a
                                 </div>
