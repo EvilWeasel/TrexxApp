@@ -19,6 +19,7 @@ class User(models.Model):
     username = models.CharField(max_length=200)
     email = models.EmailField(null=True)
     password = models.CharField(max_length=200)
+    loghash = models.CharField(max_length=200, default='none')
 
 
 class Lernobjekt(models.Model):
@@ -26,4 +27,3 @@ class Lernobjekt(models.Model):
     beschreibung = models.CharField(max_length=200)
     kategorie = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
