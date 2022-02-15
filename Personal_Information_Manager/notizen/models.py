@@ -1,4 +1,5 @@
 import email
+from django import forms
 from django.db import models
 
 # Create your models here.
@@ -27,3 +28,4 @@ class Lernobjekt(models.Model):
     beschreibung = models.CharField(max_length=200)
     kategorie = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    file = models.FileField(null=True)

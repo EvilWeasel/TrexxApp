@@ -1,0 +1,22 @@
+{% extends 'mainTemplate.html' %}
+{% block title %}Upload{% endblock %}
+
+
+{% block content %}
+
+<form action="post" method="post">
+  {% csrf_token %}
+  <label for="file">Wähle Datei aus.</label>
+  <input type="file" name="file" id="file">
+  <label for="name">Name der Datei</label>
+  <input type="text" name="name" id="name">
+  <label for="beschreibung">Beschreibung</label>
+  <input type="text" name="beschreibung" id="beschreibung">
+  <label for="kategorie">Kategorie</label>
+  <input type="text" name="kategorie" id="kategorie">
+  <input type="submit" value="Submit">
+</form>
+
+
+
+{% endblock %}

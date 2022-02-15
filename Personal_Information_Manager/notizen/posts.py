@@ -2,13 +2,14 @@ from django.http import HttpResponse
 from django.core.exceptions import *
 from django.shortcuts import redirect, render
 from django.db import models
-from . import models
+from .models import User, Lernobjekt
+from .forms import FileFieldForm
 import hashlib
 import uuid
 
 
 def userCreate(request):
-    newUser = models.User()
+    newUser = User()
     newUser.username = request.POST['firstname']
     newUser.email = request.POST['email']
     newUser.password = request.POST['password']
@@ -38,3 +39,22 @@ def userLogin(request):
     Result.set_cookie('loghash', loginUser.loghash,
                       max_age=60 * 60 * 24 * 1)
     return Result
+
+
+def uploadFile(request):
+    if request.method == 'POST':
+        form = FileFieldForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            instance = Lernobjekt(
+                file=request.FILES['file'],
+                user=User.objects.get(loghash=request.COOKIES['loghash']),
+                name=request.POST['name'] or "",
+                beschreibung=request.POST['beschreibung'] or "",
+                kategorie=request.POST['kategorie'] or ""
+            )
+            instance.save()
+            instance.refresh_from_db()
+            return redirect('/account/')
+    else:
+        form = FileFieldForm()
+    return render(request, 'upload.html', {'form': form})
